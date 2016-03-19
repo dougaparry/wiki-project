@@ -1,0 +1,203 @@
+/* Nav and Footer Styles 
+-------------------------------------------------- */
+button #guestbutton{
+    padding-left:10%;
+    padding-right:10%;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 40px;
+  background-color: #f5f5f5;
+  padding-top: 5px;
+}
+
+
+/* Custom page CSS */ 
+
+body > .container {
+  padding: 60px 15px 0;
+}
+.container .text-muted {
+  margin: 20px 0;
+}
+
+.footer > .container {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.shrink {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.shrink-footer {
+  padding-right: 15px;
+  padding-left: 15px;
+  padding-top: 5px;
+}
+
+code {
+  font-size: 80%;
+}
+
+footer p {
+  float: right;
+  padding: 5px;
+  display: inline; 
+  margin-top: 8px;
+}
+
+footer address {
+  padding: 5px;
+}
+
+footer img {
+  display: inline;
+}
+
+#left-side {
+  float: left;
+}
+
+#PageHeader {
+  text-align: center; 
+}
+
+#loginbutton{
+background: silver;
+border-color: silver;
+}
+
+/* Exoand list styles - country page */
+#guestbutton{
+    margin: auto auto;
+    background: silver;
+  border-color: silver;
+  color:white;
+}
+
+
+/*div.list ul li{
+  list-style-type: none;
+  font-family: Arial;
+  font-size: 1.1em; 
+  text-decoration: none;
+}*/
+
+a:hover {
+  color: black; 
+}
+
+/*div.row a {
+  text-decoration: none;
+  font-size: 1.1em; 
+}
+*/
+
+/*div.list a {
+  text-decoration: none;
+  font-size: 1.1em; 
+}*/
+
+#Playing_picture{
+    text-align:center;
+    border:solid;
+    border-color: silver;
+    padding:10px;
+}
+
+/* Sign in form styles */
+fieldset {
+   border: 1px solid silver;
+   width: 45%; 
+   background-color: white;
+   padding: 20px;
+   margin: auto auto; 
+}
+
+form {
+   margin-bottom: 50px;
+   padding: 5px; 
+}
+
+
+/* Legend styles */
+legend {
+  font-family: ubuntu;
+  color: black;
+  font-weight: bold;
+  padding: 3px;
+  font-size: 16px;
+  text-align: center; 
+}
+
+/* Label Styles */
+label {
+  clear: left;
+  display: block;
+  float: left;
+  margin: 7px 4px 7px 0px;
+  width: 40%;
+  font-family: Arial;
+  color: grey;
+  font-size: 1em;
+}
+
+
+/*Editing profile page*/
+
+div body{
+    color:silver;
+}
+
+h6{
+  background-color: white;
+  border-width: 0px;
+  border:none;
+}
+
+.form-group #profilecheck{
+  padding-left:10px;
+  padding-right: 5px;
+}
+
+/*Sign in page styles */
+
+p.guest {
+  float: right;
+  margin-right: 50px; 
+}
+#uploadbutton{
+  background-color: silver;
+  border-color: silver;
+}
+
+.jumbotron  #editjumbo{
+   text-align:center;
+}
+
+#guestButton{
+  margin-left:570px;
+  margin-top:20px;
+}
+/*dl.ethics {
+    display: block;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin-left: 0;
+    margin-right: 0;
+*/}
+

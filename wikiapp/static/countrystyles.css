@@ -1,0 +1,111 @@
+/* Nav and Footer Styles 
+-------------------------------------------------- */
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 40px;
+  background-color: #f5f5f5;
+  padding-top: 5px;
+}
+
+/* Custom page CSS */ 
+
+body > .container {
+  padding: 60px 15px 0;
+}
+.container .text-muted {
+  margin: 20px 0;
+}
+
+.footer > .container {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.shrink {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.shrink-footer {
+  padding-right: 15px;
+  padding-left: 15px;
+  padding-top: 5px;
+}
+
+code {
+  font-size: 80%;
+}
+
+footer p {
+  float: right;
+  padding: 5px;
+  display: inline; 
+  margin-top: 8px;
+}
+
+footer address {
+  padding: 5px;
+}
+
+footer img {
+  display: inline;
+}
+
+#left-side {
+  float: left;
+}
+
+#PageHeader {
+  text-align: center; 
+}
+
+#loginbutton{
+background: silver;
+border-color: silver;
+}
+
+/* Exoand list styles - country page */
+
+
+
+div.list ul li{
+  list-style-type: none;
+  font-family: Arial;
+  font-size: 3em; 
+  text-decoration: none;
+}
+
+a:hover {
+  color: black; 
+}
+
+div.row a {
+  text-decoration: none;
+  font-size: 1.1em; 
+}
+
+div.list a {
+  text-decoration: none;
+  font-size: 1.1em; 
+}
+
+#Playing_picture{
+    text-align:center;
+    border:solid;
+    border-color: silver;
+    padding:10px;
+}
+
+

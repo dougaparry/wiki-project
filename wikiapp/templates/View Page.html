@@ -1,0 +1,37 @@
+{% extends 'base.html' %} 
+
+<!-- 	<title>{{ article_name }}</title> -->
+
+{% block content %}
+<!-- <div class="jumbotron">
+      <div class="container">
+        <h1 id="editjumbo">Create a page</h1>
+      </div>
+</div> -->
+<div class="container">
+		<div class="page-header" >
+			<h1 id="PageHeader">{{ article_name }}
+				{% if hide == 1 %}
+
+			<a href="/wikijourney/{{ article_name }}/edit/" role="button" class="btn btn-default" id="edit_id">Edit this page</a>
+
+				{% endif %}</h1>
+		</div>
+		{% autoescape off %}
+			
+			<div class="well">
+					<p>{{ continent }}</p>
+					<p>{{ content}}</p>
+
+			</div>
+			<p>Author - {{ author }}</p>
+
+			<p>Editors - {% for item in editors %} <span>{{ item.content_author }}; </span>{% endfor %}</p>
+
+		{% endautoescape %}
+			
+		</div>
+	</nav>
+</div>
+
+{% endblock %}

@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<br></br>
+  <br></br>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4">
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <img class="Playing_picture" src="/static/People/italy.jpg" alt="About Picture" width="330" height="340"/>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <img class="Playing_picture" src="/static/People/maps.jpg" alt="About Picture" width="330" height="340"/>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <img class="Playing_picture" src="/static/People/map.jpg" alt="About Picture" width="330" height="340"/>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div> 
+    
+    <form class="form-signin" method="post" action="/wikijourney/userlogin/">
+                    {% csrf_token %}
+      <fieldset>
+        <legend><h1 class="form-signin-heading" id="log_in">Please Log In</h1></legend>
+        <label for="inputEmail">Please enter your email</label>
+        <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus name="inputEmail"/>
+        
+        <label for="inputPassword">Enter your password</label>
+        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required name="inputPassword"/>
+
+        {% if password_incorrect == False %}
+            <p class="text-danger">Login details incorrect, please check your details or sign up as a new user</p>
+        {% endif %}
+        <br>
+        <button href="/wikijourney/profile/" class="btn btn-lg btn-primary btn-block" id="signButton" type="submit">Login</button>
+        </br>
+      </fieldset>
+    </div>
+
+    <a href="/wikijourney/guest/" class="btn btn-default" id="guestButton" role="button" text-align="center">Proceed as guest</a>
+                      </div>
+       
+                    
+      </fieldset> 
+
+      </form> 
+
+    <br>
+    
+
+{% endblock %}
+
+
+  
+   
+            
+
+            

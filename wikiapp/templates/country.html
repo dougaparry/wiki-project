@@ -1,0 +1,402 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+	<link href="/static/bootstrap.css" rel="stylesheet">
+
+    <link href="/static/countrystyles.css" rel="stylesheet">
+
+  </head>
+
+  <body>
+
+      <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="shrink">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="true" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/wikijourney"><img src="/static/homeicon.png" alt="homepage"  href="/wikijourney" height:"30px" width="30px"></a>
+          <a class="navbar-brand" href="/wikijourney/country/">All<span class="All" aria-hidden="true"></span></a>
+        
+        
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="true">Africa <span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+                {% for country in africa %}
+                  <li><a href="/wikijourney/{{ country.article_title }}">{{ country.article_title }}</a></li>
+
+                {% endfor %}
+              </ul>
+            </li>
+
+            <li class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="true">Asia <span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+              {% for country in asia %}
+                <li><a href="/wikijourney/{{ country.article_title }}">{{ country.article_title }}</a></li>
+                {% endfor %}
+              </ul>
+            </li>
+
+            <li class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="true">Australia <span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+              {% for country in australia %}
+                <li><a href="/wikijourney/{{ country.article_title }}">{{ country.article_title }}</a></li>
+                {% endfor %}
+              </ul>
+            </li>
+
+            <li class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="true">Europe <span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+              {% for country in europe %}
+                <li><a href="/wikijourney/{{country.article_title}}">{{country.article_title}}</a></li>
+                {% endfor %}
+              </ul>
+            </li>
+
+            <li class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="true">North America <span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+              {% for country in north %}
+                <li><a href="/wikijourney/{{country.article_title}}">{{ country.article_title}}</a></li>
+               {% endfor %}
+              </ul>
+            </li>
+
+            <li class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="true">South America <span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+              {% for country in south %}
+                <li><a href="/wikijourney/{{country.article_title}}">{{country.article_title}}</a></li>
+              {% endfor %}
+              </ul>
+            </li>
+          </ul>
+
+		 
+          <form class="navbar-form navbar-right" role="search">
+ 
+		
+            {% if hide == 0 %}
+              <a href="/wikijourney/loginpage" role="button" class="btn btn-primary" id="loginbutton">Log in</a>
+              <a href="/wikijourney/join" role="button" class="btn btn-default">Join</a>
+            {% else %}
+              <a href="/wikijourney/profile" role="button" class="btn btn-default">Profile</a>
+              <a href="/wikijourney/userlogout" role="button" class="btn btn-default">Log out</a>
+            {% endif %}
+
+
+          </form>
+         
+        </div>
+      </div>
+    </nav>
+<div class="jumbotron">
+      <div class="container">
+        <h1 id="editjumbo">Country Index</h1>
+      </div>
+</div>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-4">
+				<div class="panel panel-default">
+					<div class="panel-body">
+						<img class="Playing_picture" src="/static/Photos/african.jpg" alt="About Picture" width="330" height="340"/>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-4">
+				<div class="panel panel-default">
+					<div class="panel-body">
+						<img class="Playing_picture" src="/static/Photos/asian2.jpg" alt="About Picture" width="330" height="340"/>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-4">
+				<div class="panel panel-default">
+					<div class="panel-body">
+						<img class="Playing_picture" src="/static/Photos/goddess.jpg" alt="About Picture" width="330" height="340"/>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+	</div> 
+		
+	
+		<div class="container">
+		<div class="row">
+			<div class="col-lg-4">
+                                  <a href="#hide1" class="hide" id="hide1"><b>Africa [+]</b></a>
+                                  <a href="#show1" class="show" id="show1"><b>Africa [-]</b></a>
+                                 <div class="list">
+                                 
+                                      <a href="/wikijourney/Algeria">Algeria -</a>
+									  <a href="/wikijourney/Angola">Angola -</a>
+									  <a href="/wikijourney/Benin">Benin -</a>
+									  <a href="/wikijourney/Botswana">Botswana -</a>
+									  <a href="/wikijourney/Burkina Faso">Burkina Faso -</a>
+									  <a href="/wikijourney/Burundi">Burundi -</a>
+									  <a href="/wikijourney/Cameroon">Cameroon -</a>
+									  <a href="/wikijourney/CAR">CAR -</a>
+									  <a href="/wikijourney/Chad">Chad -</a>
+									  <a href="/wikijourney/Congo">Congo -</a>
+									  <a href="/wikijourney/DRC">DRC -</a>
+									  <a href="/wikijourney/Djibouti">Djibouti -</a>
+									  <a href="/wikijourney/Egypt">Egypt -</a>
+									  <a href="/wikijourney/Equitorial Guinea">Equatorial Guinea -</a>
+									  <a href="/wikijourney/Eritrea">Eritrea -</a>
+									  <a href="/wikijourney/Ethiopia">Ethiopia -</a>
+									  <a href="/wikijourney/Gabon">Gabon -</a>
+									  <a href="/wikijourney/Gambia">Gambia -</a>
+									  <a href="/wikijourney/Ghana">Ghana -</a>
+									  <a href="/wikijourney/Kenya">Kenya -</a>
+									  <a href="/wikijourney/Lesotho">Lesotho -</a>
+									  <a href="/wikijourney/Liberia">Liberia -</a>
+									  <a href="/wikijourney/Libya">Libya -</a>
+									  <a href="/wikijourney/Madagascar">Madagascar -</a>
+									  <a href="/wikijourney/Malawi">Malawi -</a>
+									  <a href="/wikijourney/Mauritius">Mauritius -</a>
+									  <a href="/wikijourney/Morocco">Morocco -</a>
+									  <a href="/wikijourney/Mozambique">Mozambique -</a>
+									  <a href="/wikijourney/Namibia">Namibia - -</a>
+									  <a href="/wikijourney/Nigeria">Nigeria -</a>
+									  <a href="/wikijourney/Rwanda">Rwanda -</a>
+									  <a href="/wikijourney/Senegal">Senegal -</a>
+									  <a href="/wikijourney/South Africa">South Africa -</a>
+									  <a href="/wikijourney/South Sudan">South Sudan -</a>
+									  <a href="/wikijourney/Tanzania">Tanzania -</a>
+									  <a href="/wikijourney/Uganda">Uganda -</a>
+									  <a href="/wikijourney/Zambia">Zambia -</a>
+									  <a href="/wikijourney/Zimbabwe">Zimbabwe -</a>
+                                
+                                 </div>
+                               
+			</div>
+			<div class="col-lg-4">
+                   <a href="#hide2" class="hide" id="hide2"><b>Asia [+]</b></a>
+                   <a href="#show2" class="show" id="show2"><b>Asia [-]</b></a>
+                  <div class="list">
+                      <a href="/wikijourney/Afghanistan">Afghanistan -</a>
+					  <a href="/wikijourney/Armenia">Armenia -</a>
+					  <a href="/wikijourney/Bahrain">Bahrain -</a>
+					  <a href="/wikijourney/Bangladesh">Bangladesh -</a>
+					  <a href="/wikijourney/Cambodia">Cambodia -</a>
+					  <a href="/wikijourney/China">China -</a>
+					  <a href="/wikijourney/Cyprus">Cyprus -</a>
+					  <a href="/wikijourney/Georgia">Georgia -</a>
+					  <a href="/wikijourney/India">India -</a>
+					  <a href="/wikijourney/Indonesia">Indonesia -</a>
+					  <a href="/wikijourney/Iran">Iran -</a>
+					  <a href="/wikijourney/Iraq">Iraq -</a>
+					  <a href="/wikijourney/Israel">Israel -</a>
+					  <a href="/wikijourney/Japan">Japan -</a>
+					  <a href="/wikijourney/Jordan">Jordan -</a>
+					  <a href="/wikijourney/Kuwait">Kuwait -</a>
+					  <a href="/wikijourney/Lebanon">Lebanon -</a>
+					  <a href="/wikijourney/Malaysia">Malaysia -</a>
+					  <a href="/wikijourney/Mongolia">Mongolia -</a>
+					  <a href="/wikijourney/Nepal">Nepal -</a>
+					  <a href="/wikijourney/Oman">Oman -</a>
+					  <a href="/wikijourney/Pakistan">Pakistan -</a>
+					  <a href="/wikijourney/Palestine">Palestine -</a>
+					  <a href="/wikijourney/Qatar">Qatar -</a>
+					  <a href="/wikijourney/Russia">Russia -</a>
+					  <a href="/wikijourney/Saudi Arabia">Saudi Arabia -</a>
+					  <a href="/wikijourney/South Korea">South Korea -</a>
+					  <a href="/wikijourney/Thailand">Thailand -</a>
+					  <a href="/wikijourney/Turkey">Turkey -</a>
+					  <a href="/wikijourney/Vietnam">Vietnam -</a>
+					  <a href="/wikijourney/Yemen">Yemen -</a>
+                </div>
+			</div>
+			
+			<div class="col-lg-4">
+                   <a href="#hide3" class="hide" id="hide3"><b>Australia [+]</b></a>
+                   <a href="#show3" class="show" id="show3"><b>Australia [-]</b></a>
+                  <div class="list">
+                   <ul>
+                      <a href="/wikijourney/Australia">Australia -</a>
+					  <a href="/wikijourney/Fiji">Fiji -</a>
+					  <a href="/wikijourney/Marshall Islands">Marshall Islands -</a>
+					  <a href="/wikijourney/Micronesia">Micronesia -</a>
+					  <a href="/wikijourney/New Zealand">New Zealand -</a>
+					  <a href="/wikijourney/Palau">Palau -</a>
+					  <a href="/wikijourney/Samoa">Samoa -</a>
+					  <a href="/wikijourney/Solomon Islands">Solomon Islands -</a>
+					  <a href="/wikijourney/Tonga">Tonga -</a>
+					  <a href="/wikijourney/Vanuatu">Vanuatu -</a>
+                   </ul>
+                 </div>
+			</div>
+			
+		</div>
+	   </div>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-4">
+				<div class="panel panel-default">
+					<div class="panel-body">
+						<img class="Playing_picture" src="/static/Photos/french.jpg" alt="About Picture" width="330" height="340"/>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-4">
+				<div class="panel panel-default">
+					<div class="panel-body">
+						<img class="Playing_picture" src="/static/People/native.jpg" alt="About Picture" width="330" height="340"/>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-4">
+				<div class="panel panel-default">
+					<div class="panel-body">
+						<img class="Playing_picture" src="/static/People/brazil.jpg" alt="About Picture" width="330" height="340"/>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+	</div> 
+		
+		<div class="container">
+		<div class="row">
+			<div class="col-lg-4">
+                                  <a href="#hide4" class="hide" id="hide4"><b>Europe [+]</b></a>
+                                  <a href="#show4" class="show" id="show4"><b>Europe [-]</b></a>
+							   
+                                <div class="list">
+                                  <ul>
+                                          <a href="/wikijourney/Albania">Albania -</a>
+										  <a href="/wikijourney/Armenia">Armenia -</a>
+										  <a href="/wikijourney/Austria">Austria -</a>
+										  <a href="/wikijourney/Belarus">Belarus -</a>
+										  <a href="/wikijourney/Belgium">Belgium -</a>
+										  <a href="/wikijourney/Croatia">Croatia -</a>
+										  <a href="/wikijourney/Czech Republic">Czech Republic -</a>
+										  <a href="/wikijourney/Denmark">Denmark -</a>
+										  <a href="/wikijourney/Finland">Finland -</a>
+										  <a href="/wikijourney/France">France -</a>
+										  <a href="/wikijourney/Germany">Germany -</a>
+										  <a href="/wikijourney/Greece">Greece -</a>
+										  <a href="/wikijourney/Hungary">Hungary -</a>
+										  <a href="/wikijourney/Ireland">Ireland -</a>
+										  <a href="/wikijourney/Italy">Italy -</a>
+										  <a href="/wikijourney/Luxembourg">Luxembourg -</a>
+										  <a href="/wikijourney/Malta">Malta -</a>
+										  <a href="/wikijourney/Monaco">Monaco -</a>
+										  <a href="/wikijourney/Netherlands">Netherlands -</a>
+										  <a href="/wikijourney/Norway">Norway -</a>
+										  <a href="/wikijourney/Poland">Poland -</a>
+										  <a href="/wikijourney/Portugal">Portugal -</a>
+										  <a href="/wikijourney/Romania">Romania -</a>
+										  <a href="/wikijourney/Serbia">Serbia -</a>
+										  <a href="/wikijourney/Slovakia">Slovakia -</a>
+										  <a href="/wikijourney/Slovenia">Slovenia -</a>
+										  <a href="/wikijourney/Spain">Spain -</a>
+										  <a href="/wikijourney/Sweden">Sweden -</a>
+										  <a href="/wikijourney/Switzerland">Switzerland -</a>
+										  <a href="/wikijourney/Ukraine">Ukraine -</a>
+										  <a href="/wikijourney/United Kingdom">United Kingdom -</a>
+										  <a href="/wikijourney/Vatican City">Vatican City -</a>
+                                  </ul>
+                               </div>	
+			</div>
+			
+			<div class="col-lg-4">
+                   <a href="#hide5" class="hide" id="hide5"><b>North America [+]</b></a>
+                   <a href="#show5" class="show" id="show5"><b>North America [-]</b></a>
+                  <div class="list">
+                   <ul>
+                      <a href="someHref">Bahamas -</a>
+					  <a href="/wikijourney/Barbados">Barbados  -</a>
+					  <a href="/wikijourney/Canada">Canada  -</a>
+					  <a href="/wikijourney/Costa Rica">Costa Rica  -</a>
+					  <a href="/wikijourney/Cuba">Cuba  -</a>
+					  <a href="/wikijourney/Dominica">Dominica  -</a>
+					  <a href="/wikijourney/El Salvador">El Salvador  -</a>
+					  <a href="/wikijourney/Haiti">Haiti  -</a>
+					  <a href="/wikijourney/Honduras">Honduras -</a>
+					  <a href="/wikijourney/Jamaica">Jamaica -</a>
+					  <a href="/wikijourney/Mexico">Mexico -</a>
+					  <a href="/wikijourney/Panama">Panama -</a>
+					  <a href="/wikijourney/Saint Lucia">Saint Lucia -</a>
+					  <a href="/wikijourney/Trinidad">Trinidad -</a>
+					  <a href="/wikijourney/United States">United States -</a>
+                   </ul>
+                </div>
+			</div>
+			
+			<div class="col-lg-4">
+                   <a href="#hide6" class="hide" id="hide6"><b>South America [+]</b></a>
+                   <a href="#show6" class="show" id="show6">South America [-]</a>
+                  <div class="list">
+                   <ul>
+                      <a href="/wikijourney/Argentina">Argentina -</a>
+					  <a href="/wikijourney/Bolivia">Bolivia -</a>
+					  <a href="/wikijourney/Brazil">Brazil -</a>
+					  <a href="/wikijourney/Chile">Chile -</a>
+					  <a href="/wikijourney/Colombia">Colombia -</a>
+					  <a href="/wikijourney/Ecuador">Ecuador -</a>
+					  <a href="/wikijourney/Guyana">Guyana -</a>
+					  <a href="/wikijourney/Paraguay">Paraguay -</a>
+					  <a href="/wikijourney/Peru">Peru -</a>
+					  <a href="/wikijourney/Suriname">Suriname -</a>
+					  <a href="/wikijourney/Uruguay">Uruguay -</a>
+					  <a href="/wikijourney/Venezuela">Venezuela -</a>
+                   </ul>
+                </div>
+			</div>
+			
+		</div>
+	   </div>
+	   
+	<br><br><br><br><br><br>
+	
+   <div class="container">
+      <p class="pull-right">
+        <a href="#">Back to top</a>
+      </p>
+    </div>
+    <footer class="footer">
+     <div class="shrink-footer">
+	  <div class="row">
+	   <div class="col-sm-6">
+        <img id="left-side" src="/static/Photos/logo.jpg" alt="footer-logo" width="45px" height="45px"/>
+		<p class="text-muted" id="left-side">WikiJourney</p>
+		<p class="text-muted" id="left-side">Date edited</p>
+	   </div>
+	   
+	   <div  class="col-sm-6">
+		<p class="text-muted"><a href="/wikijourney/help">How to use this site</a></p>
+	   </div>
+	   </div>
+	   
+     </div>
+    </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	<script src="/static/bootstrap/js/bootstrap.min.js"></script>
+
+  </body>
+</html>

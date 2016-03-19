@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <br></br>
+  <br></br>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4">
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <img class="Playing_picture" src="/static/People/view1.jpg" alt="About Picture" width="330" height="340"/>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <img class="Playing_picture" src="/static/People/travel.jpg" alt="About Picture" width="330" height="340"/>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <img class="Playing_picture" src="/static/People/view.jpg" alt="About Picture" width="330" height="340"/>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div> 
+
+	
+<div id="container_demo" >
+	<div id="wrapper">
+		
+		<div id="register" class="animateform">
+			<form  method = "post" action="/wikijourney/create/"> 
+              {% csrf_token %}
+			 <fieldset>
+				<legend><h1 id="join_id"> Sign up </h1></legend> 
+				
+				<label for="inputEmail">Please enter your email</label>
+			    <input type="email" name="inputEmail" id="inputEmail" class="form-control" required="required" type="email" placeholder="mysupermail@mail.com"/>
+			  
+			    <label for="inputPassword">Please enter a password</label>
+			    <input type="password" name="inputPassword" id="inputPassword" class="form-control" placeholder="Password" required>
+				
+				<label for="inputPassword">Re-type your password</label>
+			    <input type="password" name="inputRePassword" id="inputPasswords" class="form-control" required="required" type="password" placeholder="eg. X8df!90EO"/>
+				{% if password_incorrect == False %}
+            <p class="text-danger">Please re-enter your password and ensure that they are the same</p>
+        {% endif %}
+        </br>
+				<button href="/wikijourney/profile/" class="btn btn-lg btn-primary btn-block" id="signButton" type="submit">Sign up</button>
+			 
+        {% if exists == True %}
+        <p class="text-danger">You're already a member, welcome back. Please log in below</p>
+        {% endif %}
+			   </br>
+			   <p class="change_link">  
+			    Already a member ?
+			    <a class="btn btn-default" href="/wikijourney/loginpage" id="guestbutton" role="button">Log in here</a> 
+			   </p>
+			 </fieldset> 
+			</form>
+		</div>
+		
+	</div>
+</div> 
+
+{% endblock %}

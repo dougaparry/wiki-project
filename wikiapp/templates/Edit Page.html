@@ -1,0 +1,46 @@
+	{% extends 'base.html' %} 
+
+{% block title %}{{ article_name }} {% endblock %}
+
+{% block content %}
+<div class="jumbotron">
+      <div class="container">
+        <h1 id="editjumbo">Edit a page</h1>
+      </div>
+</div>
+	<div class="container">
+
+		<div class="page-header" >
+			<h1 id="PageHeader">{{ article_name }} </h1>
+		</div>
+		
+		<div class="well">
+			<form method = "post" action="/wikijourney/{{ article_name }}/save/">
+				{% csrf_token %}
+				<div class="form-group">
+					<h3>Continent</h3>
+						<input type="radio" name="continent_rad" required="required" value="Africa">Africa
+						<input type="radio" name="continent_rad" required="required" value="Asia">Asia
+						<input type="radio" name="continent_rad" required="required" value="Australia">Australia
+						<input type="radio" name="continent_rad" required="required" value="Europe">Europe
+						<input type="radio" name="continent_rad" required="required" value="North America">North America
+						<input type="radio" name="continent_rad" required="required" value="South America">South America
+					
+				</div>
+				<div class="form-group">
+					<h3>Content</h3>
+					<textarea name="Content" class="form-control" id="ContentCountry" placeholder="Some ideas: National Foods, places to visit, major festivals, cultural norms, clothing" rows="10">{{ content }}</textarea>
+				</div>
+				   <button type="submit" class="btn btn-default" id="save_id">Save Page</button> 
+			</form>
+			{% for item in list %}
+			<p>
+				<a href="/wikijourney/{{ article_name }}/edit/revert/{{ item.content_contentID }}">{{ item.content_change_date}}</a>
+				 editor - {{ item.content_author }}
+			</p>
+			{% endfor %}
+		</div>
+		
+	</div>
+
+{% endblock %}

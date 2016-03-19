@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<div class="container">
+		<div class="page-header" >
+			<h1 id="PageHeader">{{ article_name }}</h1> 
+		</div>
+
+		
+		<div class="well">
+
+
+		{% if hide == 1 %}
+
+		<p>This page does not exist.</p> 
+
+		<p><a class="btn btn-default" href="/wikijourney/{{article_name}}/edit/" role="button" id="SaveButton">Create? &raquo;</a></p>	
+
+		{% elif hide == 2 %}
+
+		<p>This page does not exist.</p> 
+
+		<p><a class="btn btn-default" href="/wikijourney/{{article_name}}/edit/" role="button" id="SaveButton">Create? &raquo;</a></p>	
+
+		</div>
+
+		{% else %}
+
+		<p>This page does not exist, you can log in to create it.</p> 
+
+		{% endif %}
+
+	</div>
+
+{% endblock %}
+

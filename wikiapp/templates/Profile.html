@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+  
+<br>
+<div class="jumbotron">
+      <div class="container">
+        <h1 id="editjumbo">Welcome to your profile</h1>
+      </div>
+</div>
+
+    <div class="container">
+        <section>
+            <div class="row">
+                <div class="col-md-4">
+					<div class="panel panel-default">
+						<div class="panel-body">
+							<img class="img-responsive" src="/static/People/avatar.jpg" alt="">
+							<input type="file" name="filename" accept="image/gif, image/jpeg, image/png">
+
+						</div>
+					</div>
+                    <h3>Change Your Password</h3>
+                        <br />
+                        <label>Enter Old Password</label>
+                        <input type="password" class="form-control" placeholder="Password1">
+                        <label>Enter New Password</label>
+                        <input type="password" class="form-control" placeholder="**********">
+                        <label>Confirm New Password</label>
+                        <input type="password" class="form-control" placeholder="**********"/>
+                        <br>
+                        <a href="#" class="btn btn-info" id="loginbtn">Change Password</a>
+                    
+                </div>
+
+                <div class="col-md-8">
+						
+						<h3>My bio</h3>
+                        <textarea class="form-control" id="usr" placeholder="Here's where you tell us a little more about you. What are your interests? Where do you travel? Do you have some cool travel stories?" rows="5"></textarea>
+                    </div>
+                 
+                    <div class="form-group col-md-8">
+						<h3>My information</h3>
+						<label>I was born in</label>
+						<input type="text" class="form-control" id="usr" placeholder="The Space Station">
+						<label>Age</label>
+						<input type="text" class="form-control" id="usr" placeholder="21">
+						<label>Gender</label><br><br>
+						<input type="checkbox" value="">Male
+						<input type="checkbox" value="">Female
+						<input type="checkbox" value="">Other<br>
+						<label>Favourite food</label>
+						<input type="text" class="form-control" id="usr" placeholder="Beans on toast">
+						<label>Favourite city I've travelled to</label>
+						<input type="text" class="form-control" id="usr" placeholder="South Africa"><br>
+						<label>Continents I've visited</label><br><br>
+						<input type="checkbox" id="profilecheck" value="">Africa
+						<input type="checkbox" value="">Asia
+						<input type="checkbox" value="">Australia
+						<input type="checkbox" value="">Europe
+						<input type="checkbox" value="">North America
+						<input type="checkbox" value="">South America
+						<input type="checkbox" value="">Armchair traveller<br><br>
+						<a href="#" class="btn btn-success" id="loginbutton">Update Details</a> <br>
+                        
+                    </div>
+            </div> 
+        </section>
+        
+    </div>
+{% endblock %}
